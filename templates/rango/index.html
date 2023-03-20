@@ -20,14 +20,14 @@
         <ul>
         {% for category in categories %}
 
-            <li>
-                <!--{{ category.name }}-->
-            <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+            <li> 
+                <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
             </li>
         {% endfor %}
         </ul>
     {% else %}
         <strong>There are no categories present.</strong>
+        
     {% endif %}
     </div>
 
@@ -37,10 +37,7 @@
 
     <ul>
     {% for page in pages %}
-        <li>
-             <!--{{ page.title }}-->
-
-                 <!--The following line is changed to add an HTML hyperlink -->
+        <li> 
             <a href="{{page.url}}">{{ page.title }}</a>
 
         </li>
@@ -48,6 +45,7 @@
     </ul>
 {% else %}
     <strong>There are no pages present.</strong>
+    
 {% endif %}
 </div>
 
