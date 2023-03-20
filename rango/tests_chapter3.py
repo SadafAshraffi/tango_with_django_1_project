@@ -39,10 +39,10 @@ class Chapter3ProjectStructureTests(TestCase):
         """
         Tests whether the tango_with_django_project configuration directory is present and correct.
         """
-        directory_exists = os.path.isdir(os.path.join(self.project_base_dir, 'tango_with_django_1_project'))
-        urls_module_exists = os.path.isfile(os.path.join(self.project_base_dir, 'tango_with_django_1_project', 'urls.py'))
+        directory_exists = os.path.isdir(os.path.join(self.project_base_dir, 'tango_with_django_project'))
+        urls_module_exists = os.path.isfile(os.path.join(self.project_base_dir, 'tango_with_django_project', 'urls.py'))
         
-        self.assertTrue(directory_exists, f"{FAILURE_HEADER}Your tango_with_django_1_project configuration directory doesn't seem to exist. Did you use the correct name?{FAILURE_FOOTER}")
+        self.assertTrue(directory_exists, f"{FAILURE_HEADER}Your tango_with_django_project configuration directory doesn't seem to exist. Did you use the correct name?{FAILURE_FOOTER}")
         self.assertTrue(urls_module_exists, f"{FAILURE_HEADER}Your project's urls.py module does not exist. Did you use the startproject command?{FAILURE_FOOTER}")
     
     def test_rango_app_created(self):
@@ -81,7 +81,7 @@ class Chapter3IndexPageTests(TestCase):
         self.views_module = importlib.import_module('rango.views')
         self.views_module_listing = dir(self.views_module)
         
-        self.project_urls_module = importlib.import_module('tango_with_django_1_project.urls')
+        self.project_urls_module = importlib.import_module('tango_with_django_project.urls')
     
     def test_view_exists(self):
         """
@@ -115,6 +115,7 @@ class Chapter3IndexPageTests(TestCase):
         Does the response from the server contain the required string?
         """
         response = self.client.get(reverse('rango:index'))
+        print(response.content.decode())
         
         self.assertEqual(response.status_code, 200, f"{FAILURE_HEADER}Requesting the index page failed. Check your URLs and view.{FAILURE_FOOTER}")
         self.assertContains(response, "Rango says hey there partner!", msg_prefix=f"{FAILURE_HEADER}The index view does not return the expected response. Be careful you haven't missed any punctuation, and that your cAsEs are correct.{FAILURE_FOOTER}")
