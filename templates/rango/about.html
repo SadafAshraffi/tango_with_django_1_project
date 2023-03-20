@@ -16,12 +16,13 @@
     <div>
        <a href='/rango/'>Index</a> <br />
         <img src="{% static 'images/rango.jpg' %}"
-    alt="Picture of Rango" /> <!-- New line -->
+    alt="Picture of Rango." /> <!-- New line -->
     </div>
 
      <div>
 
-        <img /> tag like <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat."/>.
+        <!-- <img /> tag like <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat."/>. -->
+        <img src="{MEDIA_URL}cat.jpg" alt="Picture of a Cat." />
 
     </div>
 </body>
