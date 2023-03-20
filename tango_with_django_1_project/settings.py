@@ -73,6 +73,7 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [STATIC_DIR, ]
 WSGI_APPLICATION = 'tango_with_django_1_project.wsgi.application'
 
 
@@ -124,3 +125,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
