@@ -21,7 +21,7 @@ Homepage
 <div>
     <h2>Most Liked Categories</h2>
     {% if categories %}
-    
+
     <ul>
         {% for category in categories %}
 
@@ -33,7 +33,7 @@ Homepage
     </ul>
     {% else %}
     <strong>There are no categories present.</strong>
- 
+
     {% endif %}
 </div>
 
@@ -54,10 +54,11 @@ Homepage
     </ul>
     {% else %}
     <strong>There are no pages present.</strong>
-    
+
 
     {% endif %}
 </div>
 
+<p>Visits: {{ visits }}</p>
 <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" /> <!-- New line -->
 {% endblock %}
